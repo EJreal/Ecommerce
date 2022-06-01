@@ -9,7 +9,8 @@ export default {
         price: 80000,
         author: 'Gabriel Marquez',
         rating: 5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 5,
     },
     {
         _id:'2',
@@ -19,7 +20,9 @@ export default {
         price: 20000,
         author: 'Gabriel Marquez',
         rating: 3.5,
-        numReviews: 5
+        numReviews: 5,
+        countInStock: 10,
+
     },
     {
         _id:'3',
