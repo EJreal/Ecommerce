@@ -5,6 +5,7 @@ import { register } from '../actions/userActions';
 
 function RegisterScreen(props) {
 
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,6 +17,7 @@ function RegisterScreen(props) {
 
     useEffect(() => {
         if (userInfo) {
+
             props.history.push("/");
         }
         return () => {
@@ -81,3 +83,4 @@ function RegisterScreen(props) {
 }
 
 export default RegisterScreen;
+

@@ -3,6 +3,7 @@ import data from './data';
 import config from './config';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 import userRoute from './routes/userRoute';
 import bodyParser from 'body-parser';
 

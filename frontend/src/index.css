@@ -215,6 +215,14 @@ a:hover {
   text-align: center;
 }
 
+.button.secondary{
+  background-color: #f0f0f0;
+}
+
+.text-center{
+  text-align: center;
+}
+
 /* Cart */
 
 .cart {
@@ -279,12 +287,14 @@ a:hover {
 /* forms */
 
 .form {
+
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 .form-container {
+
   display: flex;
   flex-direction: column;
   width: 32rem;
@@ -294,11 +304,13 @@ a:hover {
   list-style-type: none;
 }
 .form-container li {
+
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
+
 input {
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
@@ -457,3 +469,4 @@ tbody > tr:nth-child(odd) {
 .categories a:hover {
   background-color: #c0c0c0;
 }
+
