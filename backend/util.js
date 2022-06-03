@@ -1,16 +1,17 @@
 import jwt from 'jsonwebtoken';
 import config from './config';
-const getToken = (user) =>{
+
+const getToken = (user) => {
     return jwt.sign({
-        _id: user._id,
+        _id: user.id,
         name: user.name,
         email: user.email,
         isAdmin: user.isAdmin,
-    }, config.JWT_SECRET,{
+    }, config.JWT_SECRET, {
         expiresIn: '48h'
     })
 }
 
-export{
+export {
     getToken
 }

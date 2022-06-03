@@ -8,12 +8,14 @@ function SigninScreen(props) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const userSignin = useSelector(state => state.userSignin);
+    const userSignin = useSelector(state=>state.userSignin);
     const {loading, userInfo, error} = userSignin;
     const dispatch = useDispatch();
 
+
     useEffect(() => {
-        if(userInfo){
+        if(userInfo) {
+
             props.history.push("/");
         }
         return () => {
@@ -27,44 +29,44 @@ function SigninScreen(props) {
         dispatch(signin(email, password));
     }
 
+
     return <div className='form'>
-    <form onSubmit={submitHandler}>
-        <ul className='form-container'>
-        <li>
-            <h3>Iniciar Sesión</h3>
-        </li>
-        <li>
-            {loading && <div>Cargando...</div>}
-            {error && <div>{error}</div>}
-        </li>
-        <li>
-            <label htmlFor='email'>
-                Email
-            </label>
-            <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}/>
-        </li>
-        <li>
-            <label htmlFor="password">
-                Password
-            </label>
-            <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)}/>
-        </li>
-        <li>
-            <button type='submit' className='button primary'>Iniciar Sesión</button>
-        </li>
-        <li>
-            Nuevo en Biblioteca Garcia Marquez?
-        </li>
-        <li>
-            <Link to="/register" className="button secondary text-center">Crea tu cuenta</Link>
-        </li>
-
-        </ul>
-
-    </form>
-        
-
+        <form onSubmit={submitHandler}>
+            <ul className='form-container'>
+                <li>
+                    <h2>Iniciar sesion</h2>
+                </li>
+                <li>
+                    {loading && <div>Cargando...</div>}
+                    {error && <div>{error}</div>}
+                </li>
+                <li>
+                    <label htmlFor='email'>
+                        Correo
+                    </label>
+                    <input type='email' name='email' id='email' onChange={(e) => setEmail(e.target.value)}>
+                    </input>
+                </li>
+                <li>
+                    <label htmlFor='password'>
+                        Contraseña
+                    </label>
+                    <input type='password' id='password' name='password' onChange={(e) => setPassword(e.target.value)}>
+                    </input>
+                </li>
+                <li>
+                    <button type="submit" className='button primary'>Ingresar</button>
+                </li>
+                <li>
+                    ¿Eres nuevo en la web?
+                </li>
+                <li>
+                    <Link to="/register" className='button secondary text-center'>Registrate</Link>
+                </li>
+            </ul>
+        </form>
     </div>
 }
 
 export default SigninScreen;
+
