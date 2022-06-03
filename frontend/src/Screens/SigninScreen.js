@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { signin } from '../actions/userActions';
 
+
 function SigninScreen(props) {
 
     const [email, setEmail] = useState('');
@@ -14,6 +15,7 @@ function SigninScreen(props) {
 
     useEffect(() => {
         if(userInfo) {
+
             props.history.push("/");
         }
         return () => {
@@ -24,7 +26,6 @@ function SigninScreen(props) {
 
     const submitHandler = (e) =>{
         e.preventDefault();
-
         dispatch(signin(email, password));
     }
 
@@ -68,3 +69,4 @@ function SigninScreen(props) {
 }
 
 export default SigninScreen;
+

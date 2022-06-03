@@ -10,6 +10,7 @@ import RegisterScreen from './screens/RegisterScreen';
 
 function App() {
 
+
   const userSignin = useSelector(state => state.userSignin);
   const { userInfo } = userSignin;
 
@@ -34,6 +35,7 @@ function App() {
               userInfo ? <Link to="/profile">{userInfo.name}</Link> :
                 <Link to="/signin">Iniciar sesion</Link>
             }
+
           </div>
         </header>
 
@@ -41,6 +43,7 @@ function App() {
           <div className="content">
             <Route path="/signin" component={SigninScreen} />
             <Route path="/register" component={RegisterScreen} />
+
             <Route path='/product/:id' component={ProductScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
