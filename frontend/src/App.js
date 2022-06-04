@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/ProductScreen';
-import CartScreen from './screens/CartScreen';
-import SigninScreen from './screens/SigninScreen';
+import HomeScreen from './Screens/HomeScreen';
+import ProductScreen from './Screens/ProductScreen';
+import CartScreen from './Screens/CartScreen';
+import SigninScreen from './Screens/SigninScreen';
 import { useSelector } from 'react-redux';
-import RegisterScreen from './screens/RegisterScreen';
+import RegisterScreen from './Screens/RegisterScreen';
 
 function App() {
 
