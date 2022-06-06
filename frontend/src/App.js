@@ -28,10 +28,11 @@ function App() {
             <Link to="/">Biblioteca Gabriel Garcia Marquez</Link>
           </div>
           <div className="header-links" >
-            <Link to="/cart/">Carrito</Link>
+            <Link className='car' to="/cart/"><img src="/carrito2.png" className="header-img"></img>
+            </Link>
             {
-              userInfo ? <Link to="/profile">{userInfo.name}</Link> :
-                <Link to="/signin">Iniciar sesion</Link>
+              userInfo ? <Link to="/products"><img src="/user2.gif" className="header-img"></img>{/* {userInfo.name} */}</Link> :
+                <Link className='d'  to="/signin">Iniciar sesion</Link>
             }
 
           </div>
@@ -51,7 +52,7 @@ function App() {
 
           </div>
         </main>
-        <footer className="footer">Todos los derechos reservados.</footer>
+        <footer className="footer">Todos los derechos reservados. Biblioteca Garcia Marquez 2022.</footer>
       </div>
     </BrowserRouter>
   );

@@ -7,8 +7,6 @@ import { createOrder } from '../actions/orderActions';
 function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
-  const orderCreate = useSelector(state => state.orderCreate);
-  const { loading, success, error, order } = orderCreate;
 
   const { cartItems, shipping, payment } = cart;
   if (!shipping.address) {
@@ -31,11 +29,11 @@ function PlaceOrderScreen(props) {
     }));
   }
   useEffect(() => {
-    if (success) {
-      props.history.push("/order/" + order._id);
-    }
+    
+      props.history.push("/order/");
+   
 
-  }, [success]);
+  }, []);
 
   return <div>
     <CheckoutSteps step1 step2 step3 step4 ></CheckoutSteps>
@@ -47,7 +45,7 @@ function PlaceOrderScreen(props) {
           </h3>
           <div>
             {cart.shipping.address}, {cart.shipping.city},
-          {cart.shipping.postalCode}, {cart.shipping.country},
+            {cart.shipping.postalCode}, {cart.shipping.country},
           </div>
         </div>
         <div>
@@ -61,16 +59,16 @@ function PlaceOrderScreen(props) {
             <li>
               <h3>
                 Carrito de compras
-          </h3>
+              </h3>
               <div>
                 Precio
-          </div>
+              </div>
             </li>
             {
               cartItems.length === 0 ?
                 <div>
                   El carrito esta vacio
-          </div>
+                </div>
                 :
                 cartItems.map(item =>
                   <li>
@@ -97,7 +95,7 @@ function PlaceOrderScreen(props) {
           </ul>
         </div>
 
-      
+
       </div>
       <div className="placeorder-action">
         <ul>

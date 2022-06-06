@@ -19,7 +19,6 @@ function RegisterScreen(props) {
 
     useEffect(() => {
         if (userInfo) {
-
             props.history.push(redirect);
         }
         return () => {
@@ -30,7 +29,6 @@ function RegisterScreen(props) {
 
     const submitHandler = (e) => {
         e.preventDefault();
-
         dispatch(register(name, email, password));
     }
 

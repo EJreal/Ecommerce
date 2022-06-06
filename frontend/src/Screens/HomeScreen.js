@@ -18,13 +18,18 @@ function HomeScreen(props) {
     }, [])
 
 
- 
 
-    return loading ? <div>Cargando...</div> :
-        error ? <div>{error}</div> :
+
+    return(
+    <>
+        {loading ? (
+            <div>Cargando...</div>
+        ) : error ? (
+            <div>{error}</div>
+        ) : (
             <ul className='products'>
                 {
-                    products.map(product =>
+                    Array.from(products).map((product) => (
                         <li key={product._id}>
                             <div className="product">
                                 <Link to={'/product/' + product._id}><img
@@ -37,13 +42,19 @@ function HomeScreen(props) {
                                     <Link to={'/product/' + product._id}>{product.name}</Link>
                                 </div>
                                 <div className="product-author">{product.author}</div>
-                                <div className="price">{product.price}</div>
-                                {/* <div className="product-rating">{product.rating} Stars {product.numReviews}</div> */}
+                                <div className="product-count">Quedan {product.countInStock} unidades</div>
+                                <div className="product-price">${product.price}</div>
+
+                                {/* <div className="product-rating">{product.rating} Stars {product.numReviews}</div> */}   
                             </div>
                         </li>
-                    )
-                }
+                    ))}
             </ul>
+
+        )}
+    </>
+    );
+
 }
 
 export default HomeScreen;
