@@ -37,9 +37,13 @@ button {
   background-color: #3f72af;
   color: #eeeeee;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
+  justify-content:space-between;
+}
+
+.header-img {
+  max-height: 3.5rem;
 }
 
 .brand a {
@@ -47,7 +51,10 @@ button {
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
+  padding: 1rem;
+  float: right;
 }
+
 
 .header-links a {
   color: #eeeeee;
@@ -74,7 +81,7 @@ button {
 
 a {
   text-decoration: none;
-  color: #3e3e3e;
+  color: #3F72AF;
 }
 
 a:hover {
@@ -115,7 +122,7 @@ a:hover {
 }
 
 .product-author {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #393e46;
   font-weight: lighter;
 }
@@ -126,8 +133,9 @@ a:hover {
 }
 
 .product-image {
-  max-height: 34rem;
-  margin-left: 2.5rem;
+  max-height: 20rem;
+  display: block;
+  margin: 0px auto;
 }
 
 .product-rating {
@@ -147,18 +155,20 @@ a:hover {
 .details-image img {
   max-width: 60rem;
   widows: 100%;
+  margin-left: 3rem;
 }
 
 .details-image {
-  flex: 2 1 60rem;
+  flex: 1 1 5rem;
 }
 
 .details-info {
-  flex: 1 1 30rem;
+  flex: 1 1 60rem;
+  margin-right: 1rem;
 }
 
 .details-action {
-  flex: 1 1 30rem;
+  flex: 0 1 30rem;
 }
 
 .details-info ul,
@@ -193,10 +203,26 @@ a:hover {
   border: 0.1rem #393e46 solid;
   cursor: pointer;
   border-radius: 0.5rem;
+  background-color: #3F72AF;
+  margin: 1rem;
+  
+}
+
+.button.cart {
+  border-color: #3F72AF;
+  color: #3F72AF;
+  font-weight: bold;
+  background-color: white;
+  padding: 0%;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-width: 3px;
 }
 
 .button:hover {
-  border: 0.1rem #eeeeee solid;
+  border: 0.1rem #393e46 solid;
 }
 
 .button.primary {
@@ -230,10 +256,12 @@ a:hover {
   flex-wrap: wrap;
   margin: 1rem;
   align-items: flex-start;
+  
 }
 
 .cart-list {
   flex: 3 1 60rem;
+  
 }
 
 .cart-action {
@@ -242,6 +270,7 @@ a:hover {
   border: 0.1rem #393e46 solid;
   border-radius: 0.5rem #eeeeee;
   padding: 1rem;
+  
 }
 
 .cart-list-container {
@@ -266,6 +295,7 @@ a:hover {
 
 .cart-list-container li:first-child {
   display: flex;
+  
   justify-content: space-between;
   align-items: flex-end;
 }

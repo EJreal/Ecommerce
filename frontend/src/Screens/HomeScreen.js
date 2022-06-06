@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 
 function HomeScreen(props) {
+    const category = props.match.params.id ? props.match.params.id : '';
     const productList = useSelector(state => state.productList);
     const { products, loading, error } = productList;
     const dispatch = useDispatch();
@@ -17,7 +17,10 @@ function HomeScreen(props) {
         };
     }, [])
 
-    return loading ? <div>Loading...</div> :
+
+ 
+
+    return loading ? <div>Cargando...</div> :
         error ? <div>{error}</div> :
             <ul className='products'>
                 {
@@ -35,7 +38,7 @@ function HomeScreen(props) {
                                 </div>
                                 <div className="product-author">{product.author}</div>
                                 <div className="price">{product.price}</div>
-                                <div className="product-rating">{product.rating} Stars {product.numReviews}</div>
+                                {/* <div className="product-rating">{product.rating} Stars {product.numReviews}</div> */}
                             </div>
                         </li>
                     )

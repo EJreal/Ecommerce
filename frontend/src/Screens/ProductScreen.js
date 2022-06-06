@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { detailsProduct } from '../actions/productActions';
+import { useSelector, useDispatch } from 'react-redux';
+import { detailsProduct, saveProductReview } from '../actions/productActions';
 
 function ProductScreen(props) {
 
@@ -24,9 +24,9 @@ function ProductScreen(props) {
 
     return <div>
         <div className="back-to-result">
-            <Link to="/">Back to result</Link>
+            <Link to="/">Volver</Link>
         </div>
-        {loading ? <div> Loading...</div> :
+        {loading ? <div> Cargando...</div> :
             error ? <div>{error} </div> :
                 (
                     <div className="details">
@@ -39,13 +39,13 @@ function ProductScreen(props) {
                                     <h4>{product.name}</h4>
                                 </li>
                                 <li>
-                                    {product.rating} Stars ({product.numReviews} Reviews)
+                                    {product.rating} Stars ({product.numReviews} Opiniones)
                                 </li>
                                 <li>
-                                    Price:< b>${product.price}</b>
+                                    Precio:< b>${product.price}</b>
                                 </li>
                                 <li>
-                                    Description:
+                                    Descripcion:
                                     <div>
                                         {product.description}
                                     </div>
@@ -56,13 +56,13 @@ function ProductScreen(props) {
                         <div className="details-action">
                             <ul>
                                 <li>
-                                    Price: {product.price}
+                                    Precio: {product.price}
                                 </li>
                                 <li>
-                                    Status: {product.countInStock > 0 ? "In Stock" : ""}
+                                    Estado: {product.countInStock > 0 ? "Disponible" : ""}
                                 </li>
                                 <li>
-                                    Qty: <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
+                                    Cantidad: <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
                                         {[...Array(product.countInStock).keys()].map(x =>
                                             <option key={x + 1} value={x + 1}>{x + 1}</option>
 
